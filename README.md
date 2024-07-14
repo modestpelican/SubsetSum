@@ -2,34 +2,26 @@
 
 This project provides a C++ implementation to demonstrate the NP-completeness of the subset sum problem using a branch and bound algorithm. The subset sum problem is a classic problem in computer science, which asks if there exists a subset of a given set of integers that sums up to a given target value.
 
-## Table of Contents
-- [Overview](#overview)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [How to Build and Run](#how-to-build-and-run)
-- [Code Explanation](#code-explanation)
-  - [Header Files](#header-files)
-  - [Global Variables](#global-variables)
-  - [Branch and Bound Function](#branch-and-bound-function)
-  - [Main Function](#main-function)
-- [Conclusion](#conclusion)
+#### Problem Description
+The subset sum problem involves determining whether a subset of a given set of integers sums up to a specific target value. This problem is NP-complete, making it challenging to solve efficiently for larger sets.
 
-## Overview
+#### Code Explanation
 
-This project demonstrates the NP-completeness of the subset sum problem using a branch and bound algorithm. The algorithm effectively explores all possible subsets to determine if there is one that sums up to the target value, proving the NP-completeness by exhaustive search within feasible bounds.
+1. **Global Variables**:
+   - `targetFound`: Boolean flag indicating if the target sum subset is found.
+   - `solution`: Vector storing the subset that sums to the target.
 
-## Project Structure
+2. **branchAndBoundSubsetSum Function**:
+   - Recursively explores subsets.
+   - Base case: stops if index exceeds set size, current sum exceeds target, or subset is found.
+   - Includes/excludes current element and recursively checks possible subsets.
 
-- `main.cpp`: Contains the implementation of the branch and bound algorithm to solve the subset sum problem.
+3. **Main Function**:
+   - Initializes the set `S` and sorts it in descending order.
+   - Calls the `branchAndBoundSubsetSum` function.
+   - Prints the subset if found, otherwise indicates no solution.
 
-## Dependencies
+### Key Concepts
+- **Branch and Bound**: Efficiently explores potential subsets while pruning paths that exceed the target sum.
 
-- C++11 or later
-- Standard Template Library (STL)
-
-## How to Build and Run
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/subset-sum-np-completeness.git
-   cd subset-sum-np-completeness
+This approach highlights the NP-completeness of the subset sum problem by demonstrating the computational effort required to find a solution.
